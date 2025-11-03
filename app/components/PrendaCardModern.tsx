@@ -4,7 +4,7 @@ interface PrendaCardModernProps {
   prenda: Prenda;
 }
 
-const WHATSAPP_NUMBER = "1234567890"; // TODO: Actualizar con el número real
+const WHATSAPP_NUMBER = "51998545204";
 
 export default function PrendaCardModern({ prenda }: PrendaCardModernProps) {
   const abrirWhatsApp = () => {

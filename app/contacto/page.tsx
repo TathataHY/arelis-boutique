@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import Header from '../components/Header';
 
-const WHATSAPP_NUMBER = "1234567890"; // TODO: Actualizar con el número real
+const WHATSAPP_NUMBER = "51998545204";
+const EMAIL = "arelissanchez0310@gmail.com";
 
 export default function ContactoPage() {
   const [nombre, setNombre] = useState('');
@@ -14,7 +15,15 @@ export default function ContactoPage() {
   const enviarMensaje = (e: React.FormEvent) => {
     e.preventDefault();
     if (nombre && email && mensaje) {
-      setMensajeEnviado('Gracias por contactarnos. Nos pondremos en contacto contigo pronto.');
+      // Crear mailto con el mensaje del formulario
+      const subject = encodeURIComponent(`Mensaje de ${nombre}`);
+      const body = encodeURIComponent(`De: ${email}\n\n${mensaje}`);
+      const mailtoLink = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+      
+      // Abrir el cliente de correo
+      window.location.href = mailtoLink;
+      
+      setMensajeEnviado('Gracias por contactarnos. Te redirigiremos a tu cliente de correo.');
       setNombre('');
       setEmail('');
       setMensaje('');
@@ -48,13 +57,9 @@ export default function ContactoPage() {
                   <span className="material-symbols-outlined text-[#25D366]">sms</span>
                   <span className="truncate">Escríbenos por WhatsApp</span>
                 </a>
-                <a className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-4 md:px-5 bg-primary/10 dark:bg-primary/20 text-primary dark:text-white text-sm md:text-base font-bold leading-normal tracking-[0.015em] grow gap-2 active:bg-primary/20 dark:active:bg-primary/30 transition-colors touch-manipulation" href="#" target="_blank" rel="noopener noreferrer">
-                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 16a4 4 0 100-8 4 4 0 000 8z" stroke="#833ab4" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path>
-                    <path d="M3 16V8a5 5 0 015-5h8a5 5 0 015 5v8a5 5 0 01-5 5H8a5 5 0 01-5-5z" stroke="#833ab4" strokeWidth="2"></path>
-                    <path d="M17.5 6.5a.5.5 0 100-1 .5.5 0 000 1z" fill="#833ab4"></path>
-                  </svg>
-                  <span className="truncate">Síguenos en Instagram</span>
+                <a className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-4 md:px-5 bg-primary/10 dark:bg-primary/20 text-primary dark:text-white text-sm md:text-base font-bold leading-normal tracking-[0.015em] grow gap-2 active:bg-primary/20 dark:active:bg-primary/30 transition-colors touch-manipulation" href={`mailto:${EMAIL}`}>
+                  <span className="material-symbols-outlined">mail</span>
+                  <span className="truncate">Escríbenos por Email</span>
                 </a>
               </div>
             </div>
