@@ -38,7 +38,7 @@ export default function PrendaCard({ prenda }: PrendaCardProps) {
           )}
         </div>
         <p className="text-base font-semibold text-primary dark:text-background-light">${prenda.precio.toFixed(2)} MXN</p>
-        <button className="mt-2 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-4 bg-primary dark:bg-background-light text-white dark:text-primary text-sm font-bold leading-normal tracking-[0.015em] transition-transform hover:scale-105">
+        <button className="mt-2 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-4 bg-primary dark:bg-background-light text-white dark:text-primary text-sm font-bold leading-normal tracking-[0.015em] transition-transform hover:scale-105 active:scale-95 touch-manipulation">
           Consultar por WhatsApp
         </button>
       </div>

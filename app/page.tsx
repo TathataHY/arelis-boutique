@@ -17,17 +17,17 @@ export default function Home() {
             
             {/* HeroSection */}
             <div className="container mt-5">
-              <div className="p-4">
-                <div className="flex min-h-[480px] flex-col gap-6 md:gap-8 bg-cover bg-center bg-no-repeat rounded-lg items-center justify-center p-4" style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1000")' }}>
+              <div className="p-2 md:p-4">
+                <div className="flex min-h-[320px] md:min-h-[480px] flex-col gap-4 md:gap-8 bg-cover bg-center bg-no-repeat rounded-lg items-center justify-center p-4 md:p-8" style={{ backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1000")' }}>
                   <div className="flex flex-col gap-2 text-center">
-                    <h1 className="text-white text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]">
+                    <h1 className="text-white text-3xl md:text-5xl font-black leading-tight tracking-[-0.033em]">
                       Tu estilo, tu esencia
                     </h1>
-                    <h2 className="text-white text-sm md:text-base font-normal leading-normal">
+                    <h2 className="text-white text-sm md:text-base font-normal leading-normal max-w-md px-2">
                       Descubre las últimas tendencias y encuentra piezas únicas que definen tu look.
                     </h2>
                   </div>
-                  <Link href="/catalogo" className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 md:h-12 px-4 md:px-5 bg-primary dark:bg-background-light text-white dark:text-primary text-sm md:text-base font-bold leading-normal tracking-[0.015em] transition-transform hover:scale-105">
+                  <Link href="/catalogo" className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 md:h-12 px-4 md:px-5 bg-primary dark:bg-background-light text-white dark:text-primary text-sm md:text-base font-bold leading-normal tracking-[0.015em] transition-transform hover:scale-105 active:scale-95">
                     <span className="truncate">Ver Catálogo</span>
                   </Link>
                 </div>
@@ -38,7 +38,7 @@ export default function Home() {
             <h2 className="text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-12 text-primary dark:text-background-light">Catálogo</h2>
             
             {/* ImageGrid - Solo mostrar 6 prendas en el home */}
-            <div className="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-6 p-4">
+            <div className="grid grid-cols-2 md:grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-4 md:gap-6 p-4">
               {prendasDestacadas.map((prenda) => (
                 <PrendaCardModern key={prenda.id} prenda={prenda} />
               ))}
@@ -46,7 +46,7 @@ export default function Home() {
 
             {/* Ver más */}
             <div className="text-center py-8 px-4">
-              <Link href="/catalogo" className="inline-flex items-center justify-center rounded-md h-12 px-6 bg-primary dark:bg-background-light text-white dark:text-primary text-sm font-bold leading-normal tracking-[0.015em] transition-transform hover:scale-105">
+              <Link href="/catalogo" className="inline-flex items-center justify-center rounded-md h-12 px-6 bg-primary dark:bg-background-light text-white dark:text-primary text-sm font-bold leading-normal tracking-[0.015em] transition-transform hover:scale-105 active:scale-95">
                 Ver Catálogo Completo
               </Link>
             </div>
