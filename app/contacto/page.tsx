@@ -30,25 +30,25 @@ export default function ContactoPage() {
       <Header />
       <div className="layout-container flex h-full grow flex-col">
         
-        <main className="flex flex-1 justify-center py-10 sm:py-20 px-4">
-          <div className="layout-content-container flex flex-col w-full max-w-3xl gap-12">
+        <main className="flex flex-1 justify-center py-6 sm:py-10 md:py-20 px-4">
+          <div className="layout-content-container flex flex-col w-full max-w-3xl gap-8 sm:gap-12">
             
             {/* Header */}
-            <div className="flex flex-wrap justify-center text-center gap-3">
-              <div className="flex w-full flex-col gap-3">
-                <p className="text-primary dark:text-white text-4xl sm:text-5xl font-black leading-tight tracking-[-0.033em]">Hablemos</p>
-                <p className="text-neutral-500 dark:text-gray-400 text-base sm:text-lg font-normal leading-normal max-w-xl mx-auto">Nos encantaría saber de ti. Escríbenos directamente o déjanos un mensaje a continuación.</p>
+            <div className="flex flex-wrap justify-center text-center gap-2 md:gap-3">
+              <div className="flex w-full flex-col gap-2 md:gap-3">
+                <p className="text-primary dark:text-white text-3xl sm:text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]">Hablemos</p>
+                <p className="text-neutral-500 dark:text-gray-400 text-sm sm:text-base md:text-lg font-normal leading-normal max-w-xl mx-auto px-2">Nos encantaría saber de ti. Escríbenos directamente o déjanos un mensaje a continuación.</p>
               </div>
             </div>
 
             {/* Botones de Contacto */}
             <div className="flex justify-center">
-              <div className="flex flex-col sm:flex-row flex-1 gap-3 flex-wrap px-4 py-3 max-w-[580px] justify-center">
-                <a className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary/10 dark:bg-primary/20 text-primary dark:text-white text-base font-bold leading-normal tracking-[0.015em] grow gap-2 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer">
+              <div className="flex flex-col sm:flex-row flex-1 gap-3 flex-wrap px-2 md:px-4 py-3 max-w-[580px] justify-center">
+                <a className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-4 md:px-5 bg-primary/10 dark:bg-primary/20 text-primary dark:text-white text-sm md:text-base font-bold leading-normal tracking-[0.015em] grow gap-2 active:bg-primary/20 dark:active:bg-primary/30 transition-colors touch-manipulation" href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer">
                   <span className="material-symbols-outlined text-[#25D366]">sms</span>
                   <span className="truncate">Escríbenos por WhatsApp</span>
                 </a>
-                <a className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary/10 dark:bg-primary/20 text-primary dark:text-white text-base font-bold leading-normal tracking-[0.015em] grow gap-2 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" href="#" target="_blank" rel="noopener noreferrer">
+                <a className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-4 md:px-5 bg-primary/10 dark:bg-primary/20 text-primary dark:text-white text-sm md:text-base font-bold leading-normal tracking-[0.015em] grow gap-2 active:bg-primary/20 dark:active:bg-primary/30 transition-colors touch-manipulation" href="#" target="_blank" rel="noopener noreferrer">
                   <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 16a4 4 0 100-8 4 4 0 000 8z" stroke="#833ab4" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path>
                     <path d="M3 16V8a5 5 0 015-5h8a5 5 0 015 5v8a5 5 0 01-5 5H8a5 5 0 01-5-5z" stroke="#833ab4" strokeWidth="2"></path>
@@ -60,24 +60,24 @@ export default function ContactoPage() {
             </div>
 
             {/* Formulario */}
-            <div className="flex flex-col items-center gap-8">
-              <h4 className="text-neutral-500 dark:text-gray-400 text-sm font-bold leading-normal tracking-[0.015em] px-4 py-2 text-center">O envíanos un mensaje</h4>
-              <form onSubmit={enviarMensaje} className="flex flex-col gap-6 w-full max-w-md">
-                <div className="flex flex-col sm:flex-row gap-6">
+            <div className="flex flex-col items-center gap-6 md:gap-8">
+              <h4 className="text-neutral-500 dark:text-gray-400 text-xs md:text-sm font-bold leading-normal tracking-[0.015em] px-4 py-2 text-center">O envíanos un mensaje</h4>
+              <form onSubmit={enviarMensaje} className="flex flex-col gap-4 md:gap-6 w-full max-w-md">
+                <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
                   <label className="flex flex-col min-w-40 flex-1">
-                    <p className="text-primary dark:text-white text-base font-medium leading-normal pb-2">Nombre</p>
-                    <input value={nombre} onChange={(e) => setNombre(e.target.value)} className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-primary dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-black/20 dark:border-white/20 bg-white dark:bg-background-dark h-12 placeholder:text-neutral-500 dark:placeholder:text-gray-500 p-[15px] text-base font-normal leading-normal transition-shadow" placeholder="Tu nombre completo" required />
+                    <p className="text-primary dark:text-white text-sm md:text-base font-medium leading-normal pb-2">Nombre</p>
+                    <input value={nombre} onChange={(e) => setNombre(e.target.value)} className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-primary dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-black/20 dark:border-white/20 bg-white dark:bg-background-dark h-12 placeholder:text-neutral-500 dark:placeholder:text-gray-500 p-[15px] text-sm md:text-base font-normal leading-normal transition-shadow" placeholder="Tu nombre completo" required />
                   </label>
                   <label className="flex flex-col min-w-40 flex-1">
-                    <p className="text-primary dark:text-white text-base font-medium leading-normal pb-2">Email</p>
-                    <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-primary dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-black/20 dark:border-white/20 bg-white dark:bg-background-dark h-12 placeholder:text-neutral-500 dark:placeholder:text-gray-500 p-[15px] text-base font-normal leading-normal transition-shadow" placeholder="tu@email.com" required />
+                    <p className="text-primary dark:text-white text-sm md:text-base font-medium leading-normal pb-2">Email</p>
+                    <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" className="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-primary dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-black/20 dark:border-white/20 bg-white dark:bg-background-dark h-12 placeholder:text-neutral-500 dark:placeholder:text-gray-500 p-[15px] text-sm md:text-base font-normal leading-normal transition-shadow" placeholder="tu@email.com" required />
                   </label>
                 </div>
                 <label className="flex flex-col">
-                  <p className="text-primary dark:text-white text-base font-medium leading-normal pb-2">Mensaje</p>
-                  <textarea value={mensaje} onChange={(e) => setMensaje(e.target.value)} className="form-textarea flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-lg text-primary dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-black/20 dark:border-white/20 bg-white dark:bg-background-dark min-h-32 placeholder:text-neutral-500 dark:placeholder:text-gray-500 p-[15px] text-base font-normal leading-normal transition-shadow" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                  <p className="text-primary dark:text-white text-sm md:text-base font-medium leading-normal pb-2">Mensaje</p>
+                  <textarea value={mensaje} onChange={(e) => setMensaje(e.target.value)} className="form-textarea flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-lg text-primary dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-black/20 dark:border-white/20 bg-white dark:bg-background-dark min-h-32 placeholder:text-neutral-500 dark:placeholder:text-gray-500 p-[15px] text-sm md:text-base font-normal leading-normal transition-shadow" placeholder="Escribe tu mensaje aquí..." required></textarea>
                 </label>
-                <button type="submit" className="flex min-w-[84px] max-w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] grow hover:bg-opacity-90 transition-opacity">
+                <button type="submit" className="flex min-w-[84px] max-w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-sm md:text-base font-bold leading-normal tracking-[0.015em] grow hover:bg-opacity-90 active:scale-95 transition-opacity touch-manipulation">
                   <span className="truncate">Enviar Mensaje</span>
                 </button>
               </form>

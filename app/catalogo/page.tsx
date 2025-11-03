@@ -24,20 +24,22 @@ export default function CatalogoPage() {
             <h2 className="text-xl md:text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-6 md:pt-12 text-primary dark:text-background-light">Catálogo</h2>
 
             {/* Filtros por Categoría */}
-            <div className="flex gap-2 pb-4 md:pb-6 border-b border-primary/10 dark:border-background-light/10 overflow-x-auto px-4 mb-4 md:mb-6">
-              {categorias.map((categoria) => (
-                <button
-                  key={categoria}
-                  onClick={() => setCategoriaSeleccionada(categoria)}
-                  className={`flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full px-3 md:px-4 transition-colors touch-manipulation ${
-                    categoriaSeleccionada === categoria
-                      ? 'bg-primary text-white dark:bg-white dark:text-primary'
-                      : 'bg-gray-100 dark:bg-gray-800 text-primary dark:text-background-light active:bg-primary/10 dark:active:bg-primary/30'
-                  }`}
-                >
-                  <p className="text-xs md:text-sm font-medium whitespace-nowrap">{categoria}</p>
-                </button>
-              ))}
+            <div className="pb-4 md:pb-6 border-b border-primary/10 dark:border-background-light/10 mb-4 md:mb-6 px-4">
+              <div className="grid grid-cols-4 sm:flex sm:gap-2 gap-2 sm:overflow-x-auto pb-2">
+                {categorias.map((categoria) => (
+                  <button
+                    key={categoria}
+                    onClick={() => setCategoriaSeleccionada(categoria)}
+                    className={`flex h-10 sm:h-9 shrink-0 items-center justify-center gap-x-2 rounded-full px-1 sm:px-4 transition-colors touch-manipulation ${
+                      categoriaSeleccionada === categoria
+                        ? 'bg-primary text-white dark:bg-white dark:text-primary'
+                        : 'bg-gray-100 dark:bg-gray-800 text-primary dark:text-background-light active:bg-primary/10 dark:active:bg-primary/30'
+                    }`}
+                  >
+                    <p className="text-[10px] sm:text-sm font-medium whitespace-nowrap truncate">{categoria}</p>
+                  </button>
+                ))}
+              </div>
             </div>
 
             <div className="grid grid-cols-1 gap-x-4 gap-y-6 p-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-6 sm:gap-y-10">
